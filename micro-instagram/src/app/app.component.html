@@ -1,0 +1,31 @@
+
+
+<header role="banner">
+  <img id="logo-main" src="https://www.coolgenerator.com/Data/Textdesign/202310/6a99c2f29c778c20e5d24917f7ec83f0.png" width="500" alt="Logo Thing main logo">
+ 
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse justify-content-center d-flex" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item me-5">
+        <a routerLink="/home" class="nav-link fs-5">Home</a>
+      </li>
+      <li class="nav-item me-5">
+        <a routerLink="/items"class="nav-link fs-5" >Photos</a>
+      </li>
+      <li class="nav-item me-5">
+        <a [routerLink]="['/items/0']" class="nav-link fs-5" >Upload Photo</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</header>
+<!-- header role="banner" -->
+<router-outlet></router-outlet> 
+<!-- Footer -->
+<footer class="text-center py-3">
+  <p>&copy; 2023 Micro Instagram. All rights reserved.</p>
+</footer>
+

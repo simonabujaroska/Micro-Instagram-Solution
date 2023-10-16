@@ -1,0 +1,24 @@
+
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-6 justify-content-center">
+
+            <div class="col mb-5" *ngFor='let item of items'>
+                <div class="card h-100" style="height: 300px;" >
+                    <!-- Thumbnail-->
+                    <img class="card-img-top" [src]='item.thumbnailUrl' alt="img"/>
+                    <!-- Details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Item title & Album ID-->
+                            <h5 class="fw-bolder" style="font-size: 14px;">{{item.title}} </h5>
+                            <p class="card-text">Album ID: {{item.albumId}}</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>              
+    </div>
+</section>
+

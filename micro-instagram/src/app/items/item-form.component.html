@@ -1,0 +1,95 @@
+<div class="card">
+    <div class="card-header">
+      {{title}}
+    </div>
+    <div class="card-body">
+      <form novalidate
+            (ngSubmit)="saveProduct()"
+            [formGroup]="itemForm">
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="productNameId">Title</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="itemTitleId"
+                   type="text"
+                   [required]="item.id === 0"
+                   [placeholder]="item.id===0? 'Title (required)':item.title" 
+                   formControlName="title"/>
+          </div>
+        </div>  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="productCodeId">Album ID</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="itemAlbumId"
+                   type="text"
+                   [required]="item.id === 0"
+                   [placeholder]="item.id===0? 'Album ID (required)':item.albumId" 
+                   formControlName="albumId"/>           
+          </div>
+        </div>
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="productCodeId">Photo URL</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="urlId"
+                   type="text"
+                   [required]="item.id === 0"
+                   [placeholder]="item.id===0? 'URL (required)':item.url" 
+                   formControlName="url"/>           
+          </div>
+        </div>
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="productCodeId">Photo Thumbnail</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="thumbnailUrlId"
+                   type="text"
+                   [required]="item.id === 0"
+                   [placeholder]="item.id===0? 'Thumbnail (required)':item.thumbnailUrl" 
+                   formControlName="thumbnailUrl"/>           
+          </div>
+        </div>
+  
+
+
+        <div class="form-group row mb-2">
+          <div class="offset-md-2 col-md-4">            
+              <div class="text-center btn-group" role="group">
+                <button class="btn btn-primary mr-3"
+                    style="width:100px;"
+                    type="submit"
+                    [title]="itemForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                    [disabled]="!itemForm.valid">
+              Save
+            </button>
+              <button class="btn btn-outline-secondary mr-3"
+                    style="width:100px;"
+                    type="button"
+                    title="Cancel your edits"
+                    [routerLink]="['/items']">
+              Cancel
+            </button>
+             <button class="btn btn-outline-warning"
+                    style="width:100px"
+                    type="button"
+                    title="Delete this product"
+                    (click)="deleteItem()"
+                    [disabled]="item.id===0">
+              Delete
+            </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  
+
+    <div class="alert alert-danger"
+         *ngIf="errorMessage">{{errorMessage}}
+    </div>
+  </div>
